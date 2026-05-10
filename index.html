@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Love Quiz 💘</title>
+
+<style>
+body {
+  text-align: center;
+  font-family: Arial;
+  background: pink;
+}
+
+h1 {
+  margin-top: 50px;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: red;
+  color: white;
+}
+
+#noBtn {
+  background: gray;
+  color: white;
+}
+
+img {
+  width: 150px;
+  margin-top: 20px;
+  transition: 0.2s;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>bn có thik toi hông 💘</h1>
+
+<button id="yesBtn">Có 😍</button>
+<button id="noBtn">Không 😢</button>
+
+<br>
+
+<img id="sticker" src="https://i.pinimg.com/originals/ae/e9/4b/aee94b3c5ddfbf2f46f7ae666b0096e3.jpg">
+
+<script>
+let yesBtn = document.getElementById("yesBtn");
+let noBtn = document.getElementById("noBtn");
+let sticker = document.getElementById("sticker");
+
+let size = 18;
+
+// ❌ Bấm KHÔNG → nút CÓ to lên
+noBtn.addEventListener("click", () => {
+  size += 10;
+  yesBtn.style.fontSize = size + "px";
+
+  // sticker mếu mạnh hơn
+  sticker.style.transform = "scale(1.2)";
+  setTimeout(() => {
+    sticker.style.transform = "scale(1)";
+  }, 200);
+});
+
+// ✅ Bấm CÓ
+yesBtn.addEventListener("click", () => {
+  document.body.innerHTML = "<h1>Yêu bạn 😍💘</h1>";
+});
+</script>
+
+</body>
+</html>
